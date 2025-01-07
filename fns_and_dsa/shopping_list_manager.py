@@ -17,7 +17,7 @@ def shopping():
             if choice.isdigit():  # Ensure it's a number before converting
                 choice = int(choice)
                 if choice == 1:
-                    item_name = input('Enter name of item: ').title()
+                    item_name = input('Enter the item to add: ').title()
                     shopping_list.append(item_name)
                 elif choice == 2:
                     remove_item_name = input(
