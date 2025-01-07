@@ -5,10 +5,13 @@ def perform_operation(num1, num2, operation):
         elif operation == "subtract":
             return num1 - num2
         elif operation == "divide":
-            return num1 / num2
+            if num1 != 0:
+                return num1 / num2
+            print('Number can not be divided by zero')
+
         elif operation == "multiply":
             return num1 * num2
         else:
             print("Unknown operation. Please try again.")
-    except ZeroDivisionError as e:
-        print(e)
+    except ValueError:
+        print('please enter a number')
