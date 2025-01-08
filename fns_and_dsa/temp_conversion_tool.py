@@ -16,21 +16,30 @@ def convert_to_fahrenheit(celsius):
 
 
 def main():
-    try:
-        temperature = float(input("Enter the temperature: "))
-        unit = input("Is this in (C)elsius or (F)ahrenheit? ").strip().upper()
+    test_cases = [
+        {'temperature': 100, 'unit': 'F'},
+        {'temperature': 0, 'unit': 'C'},
+        {'temperature': -40, 'unit': 'F'},
+        {'temperature': 37, 'unit': 'C'}
+    ]
 
-        if unit == 'C':
-            converted = convert_to_fahrenheit(temperature)
-            print(f"{temperature}C is {converted:.2f}F")
-        elif unit == 'F':
-            converted = convert_to_celsius(temperature)
-            print(f"{temperature}F is {converted:.2f}C")
-        else:
-            print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+    for case in test_cases:
+        try:
+            temperature = case['temperature']
+            unit = case['unit']
 
-    except ValueError:
-        print("Invalid temperature. Please enter a numeric value.")
+            if unit == 'C':
+                converted = convert_to_fahrenheit(temperature)
+                print(f"{temperature}C is {converted:.2f}F")
+            elif unit == 'F':
+                converted = convert_to_celsius(temperature)
+                print(f"{temperature}F is {converted:.2f}C")
+            else:
+                print(
+                    "Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+
+        except ValueError:
+            print("Invalid temperature. Please enter a numeric value.")
 
 
 if __name__ == "__main__":
