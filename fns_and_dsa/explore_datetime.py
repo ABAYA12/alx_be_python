@@ -1,5 +1,5 @@
 import datetime
-from datetime import timedelta  # Uncomment and use this import
+from datetime import timedelta
 
 
 def display_current_datetime():
